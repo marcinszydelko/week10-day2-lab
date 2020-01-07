@@ -25,4 +25,9 @@ public class Bus {
     public Person removePerson() {
        return this.passengers.remove(0);
     }
+
+
+    public void addPersonFromQueue(BusStop busstop) {
+        addPerson(busstop.removePersonFromQueue());
+    }
 }
