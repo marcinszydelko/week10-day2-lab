@@ -24,15 +24,24 @@ public class BusTest {
 
     @Test
     public void canAddPassengerIfTotalCountIsLessThanCapacity() {
-        bus.add(person);
+        bus.addPerson(person);
         assertEquals(1, bus.getPassengers());
     }
 
     @Test
     public void canNotAddPassengerIfTotalCountIsMoreThanCapacity() {
-        bus2.add(person);
-        bus2.add(person);
-        bus2.add(person);
-        assertEquals(2, bus.getPassengers());
+        bus2.addPerson(person);
+        bus2.addPerson(person);
+        bus2.addPerson(person);
+        assertEquals(2, bus2.getPassengers());
     }
+
+    @Test
+    public void canRemovePassengerFromBus() {
+        bus.addPerson(person);
+        bus.removePerson();
+        assertEquals(0, bus.getPassengers());
+    }
+
+
 }
